@@ -1,0 +1,92 @@
+<div class="info">
+    <div>Avatar_url</div>
+    <div>
+        <input type="url" 
+        name="avatar_url" 
+        placeholder="https:// "
+        value="{{teacher.avatar_url}}">
+    </div>
+</div>
+
+<div class="info">
+    <div>Nome</div>
+    <div>
+        <input type="text" 
+        name="name" 
+        placeholder="Digite seu nome"
+        value="{{teacher.name}}"
+        >
+    </div>
+</div>
+
+<div class="info">
+    <div>Data de nascimento</div>
+    <div>
+        <input type="date" 
+        name="birth_date"
+        value="{{teacher.birth_date}}"
+        >
+    </div>
+</div>
+
+<div class="info">
+    <div>Grau de escolaridade</div>
+    <div>
+        <select name="education_level" >
+            <option 
+            value="Ensino Medio Completo"
+            {% if teacher.education_level == "Ensino Medio Completo" %}
+            selected
+            {% endif %}>Ensino Medio Completo</option>
+            <option value="Ensino Superior Completo"
+            {% if teacher.education_level == "Ensino Superior Completo" %}
+            selected
+            {% endif %}>Ensino Superior Completo</option>
+            <option value="Mestrado"
+            {% if teacher.education_level == "Mestrado" %}
+            selected
+            {% endif %}>Mestrado</option>
+            <option value="Doutorado"
+            {% if teacher.education_level == "Doutorado" %}
+            selected
+            {% endif %}>Doutorado</option>
+        </select>
+    </div>
+</div>
+
+<div class="info">
+    <div>Tipo de Aula</div>
+    <div>
+        <span>
+            <input 
+            type="radio" 
+            name="class_type" 
+            value="P"
+            {% if teacher.class_type == "P" %}
+            checked
+            {% endif %} >Prensencial</span>
+               
+        <span>
+            <input 
+            type="radio" 
+            name="class_type" 
+            value="EAD"
+            {% if teacher.class_type == "EAD" %}
+            checked
+            {% endif %}>À distancia </span>
+            
+    </div>
+</div>
+
+<div class="info">
+    <div>Area de atuação</div>
+    <div>
+        <input 
+        type="text" 
+        name="subjects_taught" 
+        placeholder="Informe sua area de atuação"
+        value="{{teacher.subjects_taught}}">
+    </div>
+</div>
+
+<button type="submit">Enviar</button>
